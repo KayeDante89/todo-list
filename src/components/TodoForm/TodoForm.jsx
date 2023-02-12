@@ -23,7 +23,7 @@ function ToDoForm(props) {
       <input
         className="form-input"
         type="text"
-        placeholder="Add to do here .."
+        placeholder="What should we do?"
         value={todo}
         onChange={(event) => setTodo(event.target.value)}
       />
