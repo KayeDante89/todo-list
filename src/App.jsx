@@ -18,6 +18,7 @@ function App() {
     },
     {
       text: "Build really cool todo app",
+      isCompleted: false,
     },
   ]);
 
@@ -27,10 +28,39 @@ function App() {
     setTodos(newTodos);
   };
 
+  const moveUp = (index) => {
+    const newTodos = [...todos];
+    if (index > 0) {
+      [newTodos[index], newTodos[index - 1]] = [
+        newTodos[index - 1],
+        newTodos[index],
+      ];
+      setTodos(newTodos);
+    }
+  };
+
+  const moveDown = (index) => {
+    const newTodos = [...todos];
+    if (index < newTodos.length - 1) {
+      // https://stackoverflow.com/a/872317
+      [newTodos[index], newTodos[index + 1]] = [
+        newTodos[index + 1],
+        newTodos[index],
+      ];
+      setTodos(newTodos);
+    }
+  };
+
   const completeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
+    newTodos[index].isCompleted = !newTodos[index].isCompleted;
     setTodos(newTodos); // update State
+  };
+
+  const uncrossItem = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].isCompleted = false;
+    setTodos(newTodos);
   };
 
   const removeTodo = (index) => {
@@ -48,7 +78,10 @@ function App() {
             key={index}
             todo={todo}
             index={index}
+            moveUp={moveUp}
+            moveDown={moveDown}
             completeTodo={completeTodo}
+            uncrossItem={uncrossItem}
             removeTodo={removeTodo}
           />
         ))}

@@ -11,3 +11,14 @@
 .complete {
   text-decoration: line-through;
 }
+
+button {
+  background-color: white;
+  border-style: none;
+  /* border-bottom: solid 1px black; */
+  font-size: 12px;
+  /* width: 50px; */
+  margin: 1px;
+  /* border-radius: 100px; */
+  padding: 8px;
+}

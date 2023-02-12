@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./TodoForm.css";
+
 function ToDoForm(props) {
   // Props
   const { addTodo } = props;
@@ -17,8 +19,9 @@ function ToDoForm(props) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
       <input
+        className="form-input"
         type="text"
         placeholder="Add to do here .."
         value={todo}

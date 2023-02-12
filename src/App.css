@@ -1,11 +1,17 @@
 .app {
   background: #6b469a;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  /* width: 50vw; */
   padding: 50px;
   height: 100vh;
 }
 
 .todo-list {
   background: #e8e8e8;
+  border-radius: 30px;
   padding: 5px;
-  max-width: 400px;
+  max-width: 600px;
+  padding: 20px;
 }
